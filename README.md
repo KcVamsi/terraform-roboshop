@@ -29,3 +29,11 @@
 # output "ami" {
 #    value = data.aws_ami.centos.image_id
 }
+
+
+
+
+# dns record creation - how to create
+
+# go to route53 create record terraform in google and get the code
+
