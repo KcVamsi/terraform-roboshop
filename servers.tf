@@ -14,6 +14,7 @@ resource "aws_instance" "frontend" {
   }
 }
 
+
 resource "aws_route53_record" "frontend" {
   zone_id = "Z01467732RXIXT52PMHO"
   name    = "frontend.devopsdomain1.online"
