@@ -24,7 +24,7 @@ value = var.sample_string
 # in the above case we are just printing variable. if variable is a combination of string (sample_String1) then we use this
 
 output "sample_string1" {
-    value = "value of sample_string = ${var.sample_tring}"
+    value = "value of sample_string = ${var.sample_string}"
 }
 
 # ${} is mandatory if we want to print the variables with string.
