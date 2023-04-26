@@ -109,3 +109,12 @@ variables "sample_dict" {
 
 # this is the most preffered variable over the list variable beacuse here we dont need to follow any order when we decalre the date, we can use them at any place.
 
+
+#  till now we are giving the inputs before only, if we want to give dynamically then we use "dev.tfvars" and "prod.tfvars"
+
+
+# for dynamically passing the values we declare a empty variable means no default values - "dev.tfvars" and "prod.tfvars"
+
+ variable "env" {} 
+
+

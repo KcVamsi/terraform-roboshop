@@ -1,3 +1,5 @@
+# all these are the types of variables
+
 variable "sample_string" {
     default = "hello world"
   
@@ -26,6 +28,8 @@ variable "sample_list" {
     ]
 }
 
+# we preffer dict over the list.
+
 
 variable "sample_dict" {
     default = {
@@ -38,4 +42,6 @@ variable "sample_dict" {
 }
 
 
+# for dynamically passing values we give a empty variable
 
+ variable "env" {}

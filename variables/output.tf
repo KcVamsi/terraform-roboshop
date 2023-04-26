@@ -34,3 +34,10 @@ output "sample_dict_boolean" {
 }
 
 
+
+# for dynamically passing the values
+
+output "env" {
+    value = var.env
+  
+}
