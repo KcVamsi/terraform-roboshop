@@ -21,7 +21,7 @@ variable "sample_list" {
         100,
         "hello"
         true,
-        123
+        123,
         1405.4
     ]
 }
