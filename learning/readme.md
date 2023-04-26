@@ -92,3 +92,20 @@ output = "sample_list_2" {
     value = var.sample_list[1]
 }
 
+
+
+# instead of list we can use the dictonary or map.
+
+# single variable have multiple values and each value have a separate name.
+
+variables "sample_dict" {
+    default = [
+        number1 = 100
+        string1 = "hello"
+        number2 = 123
+        boolean = true
+    ]
+}
+
+# this is the most preffered variable over the list variable beacuse here we dont need to follow any order when we decalre the date, we can use them at any place.
+

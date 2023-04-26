@@ -27,5 +27,15 @@ variable "sample_list" {
 }
 
 
+variable "sample_dict" {
+    default = {
+        number1 = 100
+        string1 = "hello"
+        number2 = 2324
+        boolean = true
+}
+  
+}
+
 
 
