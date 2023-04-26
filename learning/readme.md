@@ -2,7 +2,7 @@
 
 # how to declare a variable.
 
-variable "sample_string" {
+a. variable "sample_string" {
 default = "hello world"
 }
 
@@ -71,7 +71,7 @@ output "sample_string1" {
 # list variable type - which means single variable can hold mulitple values.
 
 
-variable "sample_list" {
+b. variable "sample_list" {
     default = [
         100,
         "hello"
@@ -98,7 +98,7 @@ output = "sample_list_2" {
 
 # single variable have multiple values and each value have a separate name.
 
-variables "sample_dict" {
+c. variables "sample_dict" {
     default = [
         number1 = 100
         string1 = "hello"
@@ -115,6 +115,10 @@ variables "sample_dict" {
 
 # for dynamically passing the values we declare a empty variable means no default values - "dev.tfvars" and "prod.tfvars"
 
- variable "env" {} 
+d. variable "env" {} 
+
+ # in cloud shell for getting the dev output we use "terraform apply -var-file=dev.tfvars" and for the prod output we use "terraform apply -var-file=prod.tfvars"
 
 
+e. 
+ 
