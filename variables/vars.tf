@@ -45,3 +45,5 @@ variable "sample_dict" {
 # for dynamically passing values we give a empty variable
 
  variable "env" {}
+
+variable "auto_num1" {}
