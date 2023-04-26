@@ -1,4 +1,4 @@
-1. variables
+1. VARIABLES
 
 # how to declare a variable.
 
@@ -12,6 +12,8 @@ default = "hello world"
 # "hello world" is the output we need, for that we use default.
 
 ## this 2 lines are equal to sample_String="hello world" in shell scripting
+
+# in terraform for varibale we are giving acname and for the output also we need to give a name.
 
 # how do we access our variable or print the output is - 
 
@@ -28,4 +30,65 @@ output "sample_string1" {
 }
 
 # ${} is mandatory if we want to print the variables with string.
+
+
+2.    DATA TYPES
+
+# string, number, boolean
+
+# booleans are true or false.
+
+# booleans and numbers doesnt need to be double quoted.
+
+# only strings needs to be double quoted.
+
+
+# terraform doesnt support the single quotes.
+
+
+
+1. variable "sample string" {
+    default = "hello world"
+}
+
+
+2. variable "sample_number" {
+    default = 100
+}
+
+
+3. variable "sample_boolean" {
+    deafult = true
+}
+
+
+
+3.   TYPES OF VARIABLES
+
+# till now we have seen a default one but we have others
+
+
+# list variable type - which means single variable can hold mulitple values.
+
+
+variable "sample_list" {
+    default = [
+        100,
+        "hello"
+        true,
+        123
+        1405.4
+    ]
+}
+
+# data types inside the list doesnt mean to the terraform.
+
+# how to get output from the list.
+# for example if we need the 2nd value from the list, then
+
+# "the list value starts from 0" #
+
+output = "sample_list_2" {
+    value = var.sample_list[1]
+}
 

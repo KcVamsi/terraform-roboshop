@@ -3,12 +3,22 @@ variable "sample_string" {
   
 }
 
-output "sample_string" {
-    value = var.sample_string
+# we keep these outputs in the output.tf file as the terraform will run all the files in the folder at a time.data "
+
+variable "sample string" {
+    default = "hello world"
+}
+
+
+variable "sample_number" {
+    default = 100
   
 }
 
-output "sample_string1" {
-    value = "value of sample_string = ${var.sample_string}"
+variable "sample_boolean" {
+    default = true
   
 }
+
+
+
