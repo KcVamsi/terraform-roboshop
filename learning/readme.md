@@ -119,6 +119,14 @@ d. variable "env" {}
 
  # in cloud shell for getting the dev output we use "terraform apply -var-file=dev.tfvars" and for the prod output we use "terraform apply -var-file=prod.tfvars"
 
+# dev.tfvars and prod.tfvars are coustimised files and we need to pass the file for the output.
 
-e. 
+e. variable "auto_num1"
  
+ # for the output of (auto.tfvars)  we no need to give any input/pass the file to the cloud shell. it will automatically runs this files and give the output.
+
+
+f. variable "sample1"
+
+# for terraform.tfvars we no need to pass the file, it will give output.
+
