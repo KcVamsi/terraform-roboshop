@@ -160,3 +160,27 @@ output = "security_group_id" {
 
 
 
+# what if terraform cant find the data source. it shows no matching security groups found will be output. for that we can use the "try" function. 
+
+# we cant use this on the output as the issue is not coming on the output, this is the main probolem with the terraform.
+
+
+# if we want to get all the security groups 
+
+data "aws_security_groups" "test" {
+
+}
+
+
+# here we wont give the name as we want all and not any particular one
+
+output "all_security_group" {
+    value = data.aws_Security_groups.test
+}
+
+
+
+
+    LOOPS
+
+
