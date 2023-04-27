@@ -196,3 +196,15 @@ count = 10
 resource "null_resource" "null" {
     count = 10
 }
+
+
+# # if we want to know the length of the function then we use 
+
+count = lenght (var.resource name)
+
+# if we want to deal with some inputs then we use the variables
+
+variable "fruits" {
+    default = [ "apple", "banana", "orange" ]
+  
+}

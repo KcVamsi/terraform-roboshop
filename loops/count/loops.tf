@@ -9,7 +9,7 @@
 
 # if we wanto to create 10 servers the nwe can use this.
 
-# if we want to know the length of the function the nwe use 
+# if we want to know the length of the function then we use 
 
 
 resource "null_resource" "fruits" {
