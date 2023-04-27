@@ -130,3 +130,33 @@ f. variable "sample1"
 
 # for terraform.tfvars we no need to pass the file, it will give output.
 
+
+# terraform will always look for terraform.tfvars files and auto.tfvars files and run them, but for custom files like dev and prod we need to pass the files.
+
+
+# terraform variable precedence.(order)
+1. -var-file
+2. *.auto.tfvars
+3. terraform.tfvars
+4. ask in cli to provide the input
+
+
+# data sources are used for accessing some information which are already there.
+
+
+# if we want a security group ID, then the data source is the one which help us to get.
+
+# get the command from the inernet.
+
+# as we know the name of the sg as "allow-all" we can search with the name for the ID.
+
+data "aws_security_group" "selected" {
+    name = "allow-all"
+}
+
+output = "security_group_id" {
+    value = data.aws_security_group.selected.id
+}
+
+
+
