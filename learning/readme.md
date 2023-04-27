@@ -183,4 +183,16 @@ output "all_security_group" {
 
     LOOPS
 
+# create a null resource and then see
 
+resource "null_resource" "null" {}
+
+and see the output 
+
+# if we want to run the same resource 10 times then we have to give 
+
+count = 10
+
+resource "null_resource" "null" {
+    count = 10
+}
