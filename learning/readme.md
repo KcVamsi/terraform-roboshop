@@ -208,3 +208,7 @@ variable "fruits" {
     default = [ "apple", "banana", "orange" ]
   
 }
+
+# provisioners is nothing but, after resource creation if we want to do some actions then we use the provisoners
+
+
