@@ -18,7 +18,7 @@ resource "null_resource" "fruits" {
 
 # we use provisioners after the resources and we can use at any place after the resource creation.
 
-provisioner "some-name" {
+ provisioner "local-exec" {
   command = "echo fruit name - ${var.fruits[count.index]}"
 
 }
