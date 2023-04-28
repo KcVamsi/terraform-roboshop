@@ -14,7 +14,7 @@
 
 resource "null_resource" "fruits" {
   count = length(var.fruits)
-}
+
 
 # we use provisioners after the resources and we can use at any place after the resource creation.
 
@@ -22,6 +22,10 @@ resource "null_resource" "fruits" {
   command = "echo fruit name - ${var.fruits[count.index]}"
 
 }
+
+}
+
+
 # if we want to deal with some inputs then we use the variables
 
 variable "fruits" {
