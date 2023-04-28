@@ -15,7 +15,7 @@ default = "hello world"
 
 # in terraform for varibale we are giving acname and for the output also we need to give a name.
 
-# how do we access our variable or print the output is - 
+# how do we access our variable or print the output is -
 
 output "sample_string" {
 value = var.sample_string
@@ -32,7 +32,7 @@ output "sample_string1" {
 # ${} is mandatory if we want to print the variables with string.
 
 
-2.    DATA TYPES
+2.     DATA TYPES
 
 # string, number, boolean
 
@@ -210,5 +210,16 @@ variable "fruits" {
 }
 
 # provisioners is nothing but, after resource creation if we want to do some actions then we use the provisoners
+
+
+# these are used to give the values of indiviuals(apple.banan etc)
+
+
+ provisioner "local-exc" {
+    command = "echo fruit name - ${var.fruits[count.index]}"
+ }
+
+
+# here we want the indiex valuw of these so we are using [count.index] and the wants the values of the variables fruits, so we use var.fruits.
 
 
