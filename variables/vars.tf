@@ -117,7 +117,9 @@ output "env" {
 
 
 
-variable "auto_num1" {}
+variable "auto_num1" {
+  
+}
 
 output "auto_num1" {
   value = var.auto_num1
