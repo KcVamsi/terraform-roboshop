@@ -57,26 +57,38 @@ output "sample_list_2" {
   
 }
 
+# sample_list_2 is the name we are giving to the output as we need the 2nd value in the list but the order starts with 0 so it will be the 1st value.
+
 output "sample_list_3" {
   value = var.sample_list [2]
   
 }
 
 
-# sample_list_2 is the name we are giving to the output as we need the 2nd value in the list but the order starts with 0 so it will be the 1st value.
-
-# # we preffer dict over the list.
+# if we want two valuesfrom the list we have to give two outputs.
 
 
-# variable "sample_dict" {
-#     default = {
-#         number1 = 100
-#         string1 = "hello"
-#         number2 = 2324
-#         boolean = true
-# }
+
+# # we preffer dictionary over the list.
+
+
+variable "sample_dict" {
+    default = {
+        number1 = 100
+        string1 = "hello"
+        number2 = 2324
+        boolean = true
+}
   
-# }
+}
+
+
+# to print the outpuut of number1
+
+output "sample_dict_number1" {
+  value = var.sample_dict["number1"]
+  
+}
 
 
 # # for dynamically passing values we give a empty variable

@@ -282,7 +282,18 @@ c. variables "sample_dict" {
     ]
 }
 
-# this is the most preffered variable over the list variable beacuse here we dont need to follow any order when we decalre the date, we can use them at any place.
+
+# here we are giving keys to the same values of the list, so that we can access with the help of keys.
+
+# this is the most preffered variable over the list variable beacuse here we dont need to follow any order when we declare the date, we can use them at any place.
+
+
+to print or access the dictonary or map
+
+output "sample_dict_number1" {
+  value = var.sample_dict["number1"]
+  
+} 
 
 
 #  till now we are giving the inputs before only, if we want to give dynamically then we use "dev.tfvars" and "prod.tfvars"
