@@ -17,7 +17,7 @@ variable "sample_stringwithvar" {
 }
 
 output "sample_stringwithvar" {
-  value = "value of sample_stringwithvar = ${var.sample_stringwithvar}"
+  value = "${var.sample_stringwithvar}"
 }
 # # if have a variable with a combination of some string to print that we use ${}
 # value = "value of sample_stringwithvar = ${var.sample_stringwithvar}"
