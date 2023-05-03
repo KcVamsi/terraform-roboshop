@@ -19,33 +19,46 @@ variable "sample_stringwithvar" {
 output "sample_stringwithvar" {
   value = "${var.sample_stringwithvar}"
 }
+
+
+
 # # if have a variable with a combination of some string to print that we use ${}
-# value = "value of sample_stringwithvar = ${var.sample_stringwithvar}"
+# value = "${var.sample_stringwithvar}"
 
 
 
 # # we keep these outputs in the output.tf file as the terraform will run all the files in the folder at a time.data "
 
-# variable "sample_number" {
-#     default = 1909
+variable "sample_number" {
+    default = 1909
   
-# }
+}
 
-# variable "sample_boolean" {
-#     default = true
+variable "sample_boolean" {
+    default = true
   
-# }
+}
 
 
-# variable "sample_list" {
-#     default = [
-#         100,
-#         "hello",
-#         true,
-#         123,
-#         1405.4
-#     ]
-# }
+variable "sample_list" {
+    default = [
+        100,
+        "hello",
+        true,
+        123,
+        1405.4
+    ]
+}
+
+
+
+output "sample_list_2" {
+  value = var.sample_list[1]
+  
+}
+
+
+# sample_list_2 is the name we are giving to the output as we need the 2nd value in the list but the order starts with 0 so it will be the 1st value.
 
 # # we preffer dict over the list.
 

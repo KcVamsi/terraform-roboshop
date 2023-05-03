@@ -168,13 +168,39 @@ sample_string is the name of the output and we refer the variables as var.variab
 # in the above case we are just printing variable. if variable is a combination of strings then we use this syntax
 
 output "sample_string1" {
-    value = "value of sample_string = ${var.sample_string}"
+    value = "${var.sample_string}"
 }
 
 # ${} is mandatory if we want to print the variables with string.
 
 
-                2.DATA TYPES
+# check the var.tf file for handson.
+
+# how do we use this declaring variable knowledge in roboshop is - we delcare a variable with name instance_type for creating instance type of t3.micro.
+
+
+
+variable "instance_type" {
+  default = "t3.micro"
+  
+}
+
+# if we want to change them in future at a time we can use this. to access this or print this in the instances we use  - instance_type = var.instance_type in the instance creation variable block.
+
+resource "aws_instance" "components" {
+  count = length(var.components)
+  ami           = data.aws_ami.centos.image_id
+  instance_type = var.instance_type
+
+
+
+
+
+
+
+
+
+                    2.DATA TYPES
 
 # string, number, boolean
 
@@ -195,7 +221,7 @@ output "sample_string1" {
 
 
 2. variable "sample_number" {
-    default = 100
+    default = 100.9
 }
 
 
@@ -205,15 +231,15 @@ output "sample_string1" {
 
 
 
-3.   TYPES OF VARIABLES
+            3.TYPES OF VARIABLES
 
 # till now we have seen a default one but we have others
 
 
-# list variable type - which means single variable can hold mulitple values.
+     a.   LIST VARIABLE TYPE - which means single variable can hold mulitple values.
 
 
-b. variable "sample_list" {
+ variable "sample_list" {
     default = [
         100,
         "hello"
@@ -223,12 +249,15 @@ b. variable "sample_list" {
     ]
 }
 
+
 # data types inside the list doesnt mean to the terraform.
 
 # how to get output from the list.
 # for example if we need the 2nd value from the list, then
 
-# "the list value starts from 0" #
+# "the list value starts from 0" 
+
+
 
 output = "sample_list_2" {
     value = var.sample_list[1]
@@ -239,6 +268,10 @@ output = "sample_list_2" {
 # instead of list we can use the dictonary or map.
 
 # single variable have multiple values and each value have a separate name.
+
+
+
+
 
 c. variables "sample_dict" {
     default = [
