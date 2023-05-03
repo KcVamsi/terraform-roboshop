@@ -1,7 +1,7 @@
 # all these are the types of variables
 
 variable "sample_string" {
-    default = "hello world"
+    default = "hello vamsi"
   
 }
 
