@@ -115,10 +115,8 @@ output "env" {
 
 
 
-
-
 variable "auto_num1" {
-  
+
 }
 
 output "auto_num1" {
@@ -129,4 +127,13 @@ output "auto_num1" {
 # for this we dont need to give the output cmnd as it will automatically gets the output.
 
 
-# variable "sample1" {}
+# we have another tfvar file where we dont need to give any inputs for the output it will automatically executes that is terraform.tfvars file
+
+
+variable "sample1" {
+
+}
+
+output "sample1" {
+  value = var.sample1
+}
