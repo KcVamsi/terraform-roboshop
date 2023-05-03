@@ -57,6 +57,11 @@ output "sample_list_2" {
   
 }
 
+output "sample_list_3" {
+  value = var.sample_list [2]
+  
+}
+
 
 # sample_list_2 is the name we are giving to the output as we need the 2nd value in the list but the order starts with 0 so it will be the 1st value.
 
