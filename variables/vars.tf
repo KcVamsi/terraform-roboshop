@@ -99,6 +99,11 @@ output "sample_dict_number1" {
 
 variable "env" {}
 
+output "env" {
+  value = var.env
+  
+}
+
 
 # variable "auto_num1" {}
 
