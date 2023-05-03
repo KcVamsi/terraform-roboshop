@@ -9,6 +9,19 @@ output "sample_string" {
   value = var.sample_string
 }
 
+# here we have only a variable so we use var.sample_String
+
+
+variable "sample_stringwithvar" {
+  default = "hello kc"
+}
+
+output "sample_stringwithvar" {
+  value = "value of sample_stringwithvar = ${var.sample_stringwithvar}"
+}
+# # if have a variable with a combination of some string to print that we use ${}
+# value = "value of sample_stringwithvar = ${var.sample_stringwithvar}"
+
 
 
 # # we keep these outputs in the output.tf file as the terraform will run all the files in the folder at a time.data "
