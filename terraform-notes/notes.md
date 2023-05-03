@@ -306,13 +306,33 @@ output "sample_dict_number1" {
 
 # for dynamically passing the values we declare a empty variable means no default values - "dev.tfvars" and "prod.tfvars"
 
-d. variable "env" {} 
+d. variable "env" {
+
+} 
+
+output "env" {
+  value = var.env
+  
+}
 
  # in cloud shell for getting the dev output we use "terraform apply -var-file=dev.tfvars" and for the prod output we use "terraform apply -var-file=prod.tfvars"
 
 # dev.tfvars and prod.tfvars are coustimised files and we need to pass the file for the output.
 
-e. variable "auto_num1"
+# these are used when we want to use in multi environment like dev and prod.
+
+
+
+
+e. variable "auto_num1" {
+
+}
+
+
+output "auto_num1" {
+  value = var.auto_num1
+
+}
  
  # for the output of (auto.tfvars)  we no need to give any input/pass the file to the cloud shell. it will automatically runs this files and give the output.
 

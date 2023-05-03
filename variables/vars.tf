@@ -104,7 +104,27 @@ output "env" {
   
 }
 
+# if we need an prod environment then we use
 
-# variable "auto_num1" {}
+# terraform apply -var-file=dev.tfvars
+
+# if we need an prod environment then we use 
+
+# terraform apply -var-file=prod.tfvars
+
+
+
+
+
+
+variable "auto_num1" {}
+
+output "auto_num1" {
+  value = var.auto_num1
+
+}
+
+# for this we dont need to give the output cmnd as it will automatically gets the output.
+
 
 # variable "sample1" {}
