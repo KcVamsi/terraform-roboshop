@@ -91,9 +91,14 @@ output "sample_dict_number1" {
 }
 
 
-# # for dynamically passing values we give a empty variable
+# # for dynamically passing inputs we need prod.tfvars and dev.tfvars
 
-#  variable "env" {}
+
+# we need to declare a empty variable and we can use prod or the dev environment for the dynamic use.
+
+
+variable "env" {}
+
 
 # variable "auto_num1" {}
 

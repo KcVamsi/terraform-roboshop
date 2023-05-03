@@ -296,6 +296,11 @@ output "sample_dict_number1" {
 } 
 
 
+
+# every time we cant hard code the data like list and maps, some times we need to give values dynamically
+
+
+
 #  till now we are giving the inputs before only, if we want to give dynamically then we use "dev.tfvars" and "prod.tfvars"
 
 
