@@ -1,4 +1,4 @@
-# # here we have a string to print
+# # here we have a variable to print
 
 # output "sample_string" {
 #     value = var.sample_string
