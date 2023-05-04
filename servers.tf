@@ -58,7 +58,7 @@ resource "aws_route53_record" "frontend" {
   records = [aws_instance.frontend.private_ip]
 }
 
-here we use private_ip as we are connecting to internal servers.
+# here we use private_ip as we are connecting to internal servers.
 
 
 resource "aws_instance" "mongodb" {
