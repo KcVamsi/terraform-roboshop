@@ -391,10 +391,6 @@ output = "security_group_id" {
 
 # .id is given in the end as we want id of the security group if we wont give .id it will show all the sg's.
 
-# what if terraform cant find the data source or the wrong sg name is given. it shows no matching security groups found will be the output. for that we can use the "try" function. 
-
-# we cant use this on the output as the issue is not coming on the output, this is the main probolem with the terraform.
-
 
 # if we want to get all the security groups 
 
@@ -406,13 +402,13 @@ data "aws_security_groups" "test" {
 # here we wont give the name as we want all and not any particular one
 
 output "all_security_group" {
-    value = data.aws_Security_groups.test
+    value = data.aws_security_groups.test
 }
 
 
 
 
-    LOOPS
+            LOOPS
 
 # create a null resource and then see
 

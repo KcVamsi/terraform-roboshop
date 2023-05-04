@@ -1,13 +1,12 @@
 #just create a null resource and see the output
 
-#resource "null_resource" "null" {
-    #count = 10
-#}
+resource "null_resource" "null" {
+    count = 10
+}
 
 
 
-
-# if we wanto to create 10 servers the nwe can use this.
+# if we wanto to create 10 servers then we can use this.
 
 # if we want to know the length of the function then we use 
 
@@ -25,7 +24,7 @@ resource "null_resource" "fruits" {
 
 }
 
-
+ 
 # if we want to deal with some inputs then we use the variables
 
 variable "fruits" {
