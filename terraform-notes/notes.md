@@ -391,7 +391,7 @@ output = "security_group_id" {
 
 # .id is given in the end as we want id of the security group if we wont give .id it will show all the sg's.
 
-# what if terraform cant find the data source. it shows no matching security groups found will be output. for that we can use the "try" function. 
+# what if terraform cant find the data source or the wrong sg name is given. it shows no matching security groups found will be the output. for that we can use the "try" function. 
 
 # we cant use this on the output as the issue is not coming on the output, this is the main probolem with the terraform.
 

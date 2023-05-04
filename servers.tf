@@ -252,3 +252,7 @@ resource "aws_route53_record" "dispatch" {
   ttl     = 30
   records = [aws_instance.dispatch.private_ip]
 }
+
+
+
+# 4 # 
