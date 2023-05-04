@@ -99,7 +99,7 @@ output "ami" {
   value = data.aws_ami.centos.image_id
 }
 
-as we want the output as am iwe are giving ami in the output
+as we want the output as ami we are giving ami in the output
 and we are using the data block so we are giving the value = data.
 
 so we can remove the output block from the resource block and output block
