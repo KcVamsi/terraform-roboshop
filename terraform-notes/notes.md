@@ -337,7 +337,14 @@ output "auto_num1" {
  # for the output of (auto.tfvars)  we no need to give any input/pass the file to the cloud shell. it will automatically runs this files and give the output.
 
 
-f. variable "sample1"
+f. variable "sample1" {
+
+}
+
+output "sample1" {
+  value = var.sample1
+
+}
 
 # for terraform.tfvars we no need to pass the file, it will give output.
 
@@ -345,14 +352,20 @@ f. variable "sample1"
 # terraform will always look for terraform.tfvars files and auto.tfvars files and run them, but for custom files like dev and prod we need to pass the files.
 
 
-# terraform variable precedence.(order)
+         
+         TERRAFROM VARIABLE PRECEDENCE.(order)
+
+
 1. -var-file
 2. *.auto.tfvars
 3. terraform.tfvars
 4. ask in cli to provide the input
 
 
+                   FOLDER 2.  DATA SOURCES   
 # data sources are used for accessing some information which are already there.
+
+# create a folder with name data sources and a file with some name, in this case data.tf is the file.
 
 
 # if we want a security group ID, then the data source is the one which help us to get.
@@ -361,15 +374,22 @@ f. variable "sample1"
 
 # as we know the name of the sg as "allow-all" we can search with the name for the ID.
 
+# rather an id we are going with the name as we know the name.
+
+# syntax for the data sources will be like this -
+
+
 data "aws_security_group" "selected" {
     name = "allow-all"
 }
+
 
 output = "security_group_id" {
     value = data.aws_security_group.selected.id
 }
 
 
+# .id is given in the end as we want id of the security group if we wont give .id it will show all the sg's.
 
 # what if terraform cant find the data source. it shows no matching security groups found will be output. for that we can use the "try" function. 
 
