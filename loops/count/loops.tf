@@ -17,7 +17,6 @@ resource "null_resource" "fruits" {
 
 
 
- 
 # 3 # if we want to deal with some inputs then we use the variables
 
 # variable "fruits" {
@@ -34,7 +33,7 @@ resource "null_resource" "fruits" {
  provisioner "local-exec" {
   command = "echo fruit name - ${var.fruits[count.index]}"
  }
- 
+
  }
 
 
