@@ -260,18 +260,18 @@ variable "instance_type" {
 #  after 1,2 and 3 we use this.
 
 
-variable "components" {
-  default = [ "frontend", "mongodb", "catalogue" ]
-}
+# variable "components" {
+#   default = [ "frontend", "mongodb", "catalogue" ]
+# }
 
-resource "aws_instance" "instance" {
-  count         = length(var.components)
-  ami           = data.aws_ami.centos.image_id
-  instance_type = var.instance_type
-  vpc_security_group_ids = [ data.aws_security_group.allow-all.id]
+# resource "aws_instance" "instance" {
+#   count         = length(var.components)
+#   ami           = data.aws_ami.centos.image_id
+#   instance_type = var.instance_type
+#   vpc_security_group_ids = [ data.aws_security_group.allow-all.id]
 
-  tags = {
-    Name = var.components[count.index]
-  }
-}
+#   tags = {
+#     Name = var.components[count.index]
+#   }
+# }
 
