@@ -260,18 +260,24 @@ variable "instance_type" {
 #  after 1,2 and 3 we use this.
 
 
-# variable "components" {
-#   default = [ "frontend", "mongodb", "catalogue" ]
-# }
+# 1 is data aws_ami centos
+# 2 is data security_group
+# 3 is variable isntance
 
-# resource "aws_instance" "instance" {
-#   count         = length(var.components)
-#   ami           = data.aws_ami.centos.image_id
-#   instance_type = var.instance_type
-#   vpc_security_group_ids = [ data.aws_security_group.allow-all.id]
+variable "components" {
+  default = [ "frontend", "mongodb", "catalogue" ]
+}
 
-#   tags = {
-#     Name = var.components[count.index]
-#   }
-# }
+resource "aws_instance" "instance" {
+  count         = length(var.components)
+  ami           = data.aws_ami.centos.image_id
+  instance_type = var.instance_type
+  vpc_security_group_ids = [ data.aws_security_group.allow-all.id]
 
+  tags = {
+    Name = var.components[count.index]
+  }
+}
+
+
+# we count in the resorce block as it has to run how many times we give/use.

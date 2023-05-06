@@ -38,6 +38,7 @@ resource "null_resource" "fruits" {
  }
 
 
+# for provisoners to get effected we use the teeraform destroy comnnadn 1st and then apply.
 # here we use "echo ${}" because we have combination of variables and string.
 # [count.index] is used to pick the value one by one and gives the index number.
 # so after the resource instead of variables we use the provisoners and then variables
@@ -46,3 +47,6 @@ variable "fruits" {
     default = [ "apple", "banana", "orange" ]
   
 }
+
+
+# now we use this in the roboshop where we create instances / components.
