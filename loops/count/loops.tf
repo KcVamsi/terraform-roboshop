@@ -4,11 +4,12 @@ resource "null_resource" "null" {
     count = 10
 }
 
-
+# if we want to run the same thing few times then we use the  count 
 # if we wanto to create 10 servers then we can use this.
 
 
-#2 # if we want to know the length of the function then we use 
+# 2 # if we want to know the length of the function then we use 
+# count = lenght(var.fruits) gives the length.
 
 
 resource "null_resource" "fruits" {
@@ -38,7 +39,7 @@ resource "null_resource" "fruits" {
 
 
 # here we use "echo ${}" because we have combination of variables and string.
-# [count.index] is used to pick the value one by one.
+# [count.index] is used to pick the value one by one and gives the index number.
 # so after the resource instead of variables we use the provisoners and then variables
 
 variable "fruits" {

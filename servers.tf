@@ -274,3 +274,4 @@ resource "aws_instance" "instance" {
     Name = var.components[count.index]
   }
 }
+

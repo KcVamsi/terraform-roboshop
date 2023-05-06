@@ -410,7 +410,7 @@ output "all_security_group" {
 
             LOOPS
 
-# create a null resource and then see
+# create a null resource or a dummy resources, this does nothing and then see
 
 resource "null_resource" "null" {}
 
