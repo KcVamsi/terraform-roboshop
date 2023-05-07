@@ -8,7 +8,7 @@
 terraform {
   backend "s3" {
     bucket = "stagebuckets"
-    key = "roboshop/dev/terraform.tfstate"
+    key = "roboshopproject/dev/terraform.tfstate"
     region = "us-east-1"
     
   }
@@ -18,3 +18,5 @@ terraform {
 # s3 is the state and stagebuckets is name of the bucket we created
 # key is folder in which we wanted to create , here we use dev environment so given dev
 # we can same code work in multi environment also
+# remove all the things before using the state and see the difference and also remove all the tfstate files
+# rm -f terraform.tfstate
