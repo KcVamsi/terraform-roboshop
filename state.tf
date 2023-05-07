@@ -20,3 +20,7 @@ terraform {
 # we can same code work in multi environment also
 # remove all the things before using the state and see the difference and also remove all the tfstate files
 # rm -f terraform.tfstate
+
+
+# 1 st destroy all the files and then creates the state files
+# we can see the tfstate file again the cloud of s3
