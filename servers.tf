@@ -365,3 +365,7 @@ resource "aws_route53_record" "records" {
 
 # we use each.value["name"] in the place of frontend which is the Name beacuse we want all the instances
 # records = [aws_instance.instance[Name].private_ip]
+
+
+
+
