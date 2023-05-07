@@ -29,3 +29,42 @@ variable "fruits" {
       orange = 3
     }
 }
+
+# deafualt is a map and in that we key as apple and value as 1
+# but in real time we will have many inputs in the variables
+# for that we have a new example as
+
+resource "null_resource" "fruit" {
+  for_each = var.fruit
+
+provisioner "local-exec" {
+    command = "echo fruit-name ${each.key} - ${each.value["count"]}"
+  
+}
+}
+
+# here we are using the ["count"] beacuse here each.key means we get apple but each.value we again have a map instead of value so in that map we need a value so we use the count
+# deafult is a map and apple is a key and in that again we have a map so we use count for getting the value in that map
+
+
+
+variable "fruit" {
+    default = {
+        apple = {
+            name = apple
+            count = 12
+
+        }
+
+        orange = {
+            name = orange
+            count = 23
+        }
+
+        banana = {
+            name= banana
+            count = 45
+        }
+    }
+  
+}
