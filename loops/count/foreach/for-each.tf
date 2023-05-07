@@ -28,4 +28,4 @@ variable "fruits" {
       banana = 2
       orange = 3
     }
-  
+}
