@@ -351,3 +351,17 @@ resource "aws_instance" "instance" {
   }
 }
 
+# now we need to create DNS records also. for that we use 
+
+
+resource "aws_route53_record" "records" {
+  for_each = var.components
+  zone_id = "Z01467732RXIXT52PMHO"
+  name    = "${each.value["name"]}.devopsdomain1.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.instance[each.value["name"]].private_ip]
+}
+
+# we use each.value["name"] in the place of frontend which is the Name beacuse we want all the instances
+# records = [aws_instance.instance[Name].private_ip]
