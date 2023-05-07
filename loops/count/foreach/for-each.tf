@@ -50,21 +50,23 @@ provisioner "local-exec" {
 
 variable "fruit" {
     default = {
-        apple = {
-            name = apple
+         apple = {
+            name = "apple"
             count = 12
 
         }
 
         orange = {
-            name = orange
+            name = "orange"
             count = 23
         }
 
         banana = {
-            name= banana
+            name= "banana"
             count = 45
         }
     }
   
 }
+
+# strings should always be in "" only
