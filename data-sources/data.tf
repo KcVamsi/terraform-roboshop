@@ -10,5 +10,7 @@ output "aws_security_group" {
 
 }
 
+ # as we want the value of id we use .id in the value.
 
+ 
 

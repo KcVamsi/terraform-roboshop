@@ -280,4 +280,4 @@ resource "aws_instance" "instance" {
 }
 
 
-# we count in the resorce block as it has to run how many times we give/use.
+# we use count in the resorce block as it has to run how many times we give/use.

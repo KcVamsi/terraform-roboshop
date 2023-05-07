@@ -451,3 +451,5 @@ variable "fruits" {
 
 
 
+# count is not a good loop, so we use the for each loop
+

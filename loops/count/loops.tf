@@ -1,8 +1,8 @@
 # 1 # just create a null resource and see the output
 
-resource "null_resource" "null" {
-    count = 10
-}
+# resource "null_resource" "null" {
+#     count = 10
+# }
 
 # if we want to run the same thing few times then we use the  count 
 # if we wanto to create 10 servers then we can use this.
@@ -10,7 +10,7 @@ resource "null_resource" "null" {
 
 # 2 # if we want to know the length of the function then we use 
 # count = lenght(var.fruits) gives the length.
-
+# lenght is going to calaclute how many values are there in the and runs those many times.
 
 resource "null_resource" "fruits" {
   count = length(var.fruits)
@@ -50,3 +50,17 @@ variable "fruits" {
 
 
 # now we use this in the roboshop where we create instances / components.
+# count is very less used loop and most used is the for each loop
+
+
+# using the same exxaple in map of map type
+
+
+variable "fruits" {
+    default = {
+      apple = 1
+      banana = 2
+      orange = 3
+    }
+  
+}
