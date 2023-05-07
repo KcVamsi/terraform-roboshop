@@ -70,3 +70,6 @@ variable "fruit" {
 }
 
 # strings should always be in "" only
+
+
+  

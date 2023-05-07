@@ -26,10 +26,10 @@ data "aws_security_group" "allow-all" {
 
 #3 # for creating the instances we use this syntax
 
-variable "instance_type" {
-  default = "t3.micro"
+# variable "instance_type" {
+#   default = "t3.micro"
   
-}
+# }
 
 
 
@@ -264,20 +264,90 @@ variable "instance_type" {
 # 2 is data security_group
 # 3 is variable isntance
 
-variable "components" {
-  default = [ "frontend", "mongodb", "catalogue" ]
-}
+# variable "components" {
+#   default = [ "frontend", "mongodb", "catalogue" ]
+# }
 
-resource "aws_instance" "instance" {
-  count         = length(var.components)
-  ami           = data.aws_ami.centos.image_id
-  instance_type = var.instance_type
-  vpc_security_group_ids = [ data.aws_security_group.allow-all.id]
+# resource "aws_instance" "instance" {
+#   count         = length(var.components)
+#   ami           = data.aws_ami.centos.image_id
+#   instance_type = var.instance_type
+#   vpc_security_group_ids = [ data.aws_security_group.allow-all.id]
 
-  tags = {
-    Name = var.components[count.index]
-  }
-}
+#   tags = {
+#     Name = var.components[count.index]
+#   }
+# }
 
 
 # we use count in the resorce block as it has to run how many times we give/use.
+
+
+# 6 #  instead of using the instance type and components block we can directly keep them in a for each loop
+# now we use the for_each in roboshop
+# we replace the - variable "instance_type" {
+#  default = "t3.micro"
+  
+# we replace the  - variable "components" {
+# default = [ "frontend", "mongodb", "catalogue" ] and directly use this
+
+variable "components" {
+  default = {
+    frontend = {
+      name = "frontend"
+      instance_type = "t3.small"
+    }
+  
+    mongodb = {
+      name = "mongodb"
+      instance_type = "t3.small"
+    }
+    
+    catalogue = {
+      name = "catalogue"
+      instance_type = "t3.small"
+    }
+    redis = {
+      name = "redis"
+      instance_type = "t3.small"
+    }
+    user = {
+      name = "user"
+      instance_type = "t3.small"
+    }
+    cart = {
+      name = "cart"
+      instance_type = "t3.small"
+    }
+    mysql = {
+      name = "mysql"
+      instance_type = "t3.small"
+    }
+
+    shipping = {
+      name = "shipping"
+      instance_type = "t3.small"
+    }
+
+    rabbitmq = {
+      name = "rabbitmq"
+      instance_type = "t3.small"
+    }
+    payment = {
+      name = "payment"
+      instance_type = "t3.small"
+    }
+  }
+}
+
+resource "aws_instance" "instance" {
+  for_each = var.components
+  ami           = data.aws_ami.centos.image_id
+  instance_type = each.value["instance_type"]
+  vpc_security_group_ids = [ data.aws_security_group.allow-all.id]
+
+  tags = {
+    Name = each.value["name"]
+  }
+}
+
