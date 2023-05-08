@@ -5,14 +5,14 @@
 # terraform remote state is nothing but, terraform deals with these files
 
 
-terraform {
-  backend "s3" {
-    bucket = "stagebuckets"
-    key = "roboshopproject/dev/terraform.tfstate"
-    region = "us-east-1"
+# terraform {
+#   backend "s3" {
+#     bucket = "stagebuckets"
+#     key = "roboshopproject/dev/terraform.tfstate"
+#     region = "us-east-1"
     
-  }
-}
+#   }
+# }
 
 # this syntax is taken from the internet
 # s3 is the state and stagebuckets is name of the bucket we created
