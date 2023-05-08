@@ -24,3 +24,48 @@ terraform {
 
 # 1 st destroy all the files and then creates the state files
 # we can see the tfstate file again the cloud of s3
+
+
+
+# we will not have direct access to s3 buckets and terraform, they need to run through some tools whihc is like jenkins
+
+
+   # JENKINS  (s27)
+
+  # root user = sudo su -
+
+# for installation of jeninks, go to jenikins.io
+# curl -o /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+# yum install 3 files
+# systemctl enable and systemctl start jenkins.
+#  opens on 8080 port
+#in organisations  we dont run terraform on our wown, it has to be run throgh some systems, this way we no need to give access to the workstation, we give access to jenkins.
+# in IAC we run through some automation not manually so we use jenkins
+#  jenkins is used to manage jobs only, where as the run time will other server which is the workstation
+# so the 1st job will be failure and for that we need to go to manage jenkins and go to manage nodes and clouds and add a new node
+
+# we are having a terrafom code, and running in a authroised server where we have access, since it is authroised server we dont like providing access to this server because it wll create unwanted work on the server.
+# so we are taking  a susyem ehich is jenkins, so go to jenkins and run the job on he partiualr server
+# major reason for running the terraform in jenkins is the multi environemnt running is easy
+
+#  how to deal with multi envi in command line is 
+
+  # backend "s3" {
+  #   bucket = "stagebuckets"
+  #   key = "roboshopproject/dev/terraform.tfstate"
+  #   region = "us-east-1"
+    
+  # }
+
+# the above code is only providng particulary to the dev envirnmet
+# so we use some other files and make it multi in command line
+# env-prod and env-dev
+# we make the above command empty as
+
+
+
+terraform {
+  backend "s3" {}
+  
+}
+
