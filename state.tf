@@ -69,3 +69,23 @@ terraform {
   
 }
 
+
+# we can get the output here also and in jenkins also but we always preffer the jenkins for it
+
+# for getting on cmnd line we use - git pull, terraform init -backend-config-env-dev/state.tfvars
+
+# 1st case
+# for using the multi envi on jenkins we use same code in the place of terraform init which is 
+# terraform init -backend-config-env-dev/state.tfvars
+# terraform apply -auto -approve
+
+
+#2nd case
+# instead of using the dev and prod we can use the variable as $(env) in place of them and remove the apply part and see, it will run on the given environment automatically
+
+
+# same wthe terraform apply also need mutli envi, so we create few files and move the variables inside the var.tf file
+
+
+
+
