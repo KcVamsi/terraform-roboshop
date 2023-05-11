@@ -35,10 +35,11 @@ variable "sample2" {
 
 # here we are having a map, so we need a lookup function
 output "sample2" {
-    value = var.sample2["a1"]
+    value = lookup(var.sample2, "a1", "dummy")
 
 }
 
 
 # here we are giving "a1" which is not there so it should nt show error , instead of that it shoul as dummy so that our code runs
+# as there is no a1 in the cmnd line it will take as dummy and show output
 
