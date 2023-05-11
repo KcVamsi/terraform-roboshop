@@ -97,12 +97,12 @@ output "sample_dict_number1" {
 # we need to declare a empty variable and we can use prod or the dev environment for the dynamic use.
 
 
-variable "env" {}
+# variable "env" {}
 
-output "env" {
-  value = var.env
+# output "env" {
+#   value = var.env
   
-}
+# }
 
 # if we need an prod environment then we use
 
