@@ -35,6 +35,10 @@ variable "sample2" {
 
 # here we are having a map, so we need a lookup function
 output "sample2" {
-  
+    value = var.sample2["a1"]
+
 }
+
+
+# here we are giving "a1" which is not there so it should nt show error , instead of that it shoul as dummy so that our code runs
 
