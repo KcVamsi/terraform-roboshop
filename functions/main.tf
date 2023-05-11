@@ -12,7 +12,7 @@ output "sample" {
 
 
 variable "sample1" {
-    default = [ "abc", "sads" ]
+    default = ["abc", "sads"]
   
 }
 
@@ -24,5 +24,17 @@ output "sample1" {
 }
 
 
+variable "sample2" {
+    default = {
+        xyx = 111
+        ascsf = 343
+        sdad =33
+    }
+  
+}
 
+# here we are having a map, so we need a lookup function
+output "sample2" {
+  
+}
 
