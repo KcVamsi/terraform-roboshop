@@ -453,3 +453,48 @@ variable "fruits" {
 
 # count is not a good loop, so we use the for each loop
 
+
+
+# provisioners
+
+# provisoner is a sub block of the resouce, that means after server creation if we want to do some changes then we can use the provisoner
+
+
+
+
+1. file ( we can copy some files to the server )
+2. remote (we want to connect to ec2 means remote)
+3. local ( in workstation means)
+
+
+
+
+provisioner "remote-exec" {
+
+      connection {
+    type     = "ssh"
+    user     = "root"
+    password = var.root_password
+    host     = self.public_ip
+  }
+
+    inline = [
+      "rm -rf roboshopusing-shell",
+      "git clone https://github.com/KcVamsi/roboshopusing-shell",
+      "cd roboshopusing-shell",
+      "sudo bash ${each.value["name"]}.sh"
+    ]
+  }
+}
+
+
+# we make the connection inside the provisoner or the outside both  are ok
+
+# change the user and password along eith the ip as private_ip
+
+# in inline we have to give the list of commands we have to run
+
+# we are using [] because it is a list
+# if the repository is already there then it will have error, so always 1st rm -rf the repo and vlone it for safe side
+
+# we use .sh in the cmnd beacsue we are having the frontend.sh as server
