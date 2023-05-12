@@ -17,5 +17,5 @@ module "sample" {
   
 }
 
-# this inlut shuld be recieved by the module by using a variable module
+# this input shuld be recieved by the module by using a variable module
 
