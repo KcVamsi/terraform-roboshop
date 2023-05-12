@@ -498,3 +498,43 @@ provisioner "remote-exec" {
 # if the repository is already there then it will have error, so always 1st rm -rf the repo and vlone it for safe side
 
 # we use .sh in the cmnd beacsue we are having the frontend.sh as server
+
+# this will create a problem bcz dns will be created successfully only if the resource is created successfully
+
+# for the issue to be resolved we need to decouple that and create a null resource and keep in that 
+
+resorce "null_resource" "provisoner" {
+  depends_on = [aws_instance.instance, aws_route53_record.records]
+  for_each             = var.compenents
+  provisioner "remote-exec" {
+
+      connection {
+    type     = "ssh"
+    user     = "root"
+    password = var.root_password
+    host     = [aws_instance.instance[each.value["name"]].private_ip]
+  }
+
+    inline = [
+      "rm -rf roboshopusing-shell",
+      "git clone https://github.com/KcVamsi/roboshopusing-shell",
+      "cd roboshopusing-shell",
+      "sudo bash ${each.value["name"]}.sh"
+    ]
+  }
+
+}
+
+
+# we use the for_each here because we need to run this as many variables as we have
+
+# we get private ip same like the dns
+# [aws_instance.instance[each.value["name"]].private_ip]
+
+# depends_on = [] is a key word used to give the perfernce to the codes which has to be run
+
+# here we can see that the nrml run of code is 1. instance 2. null_resouce 3. records dns but what we want is to run the instances first to create them and then create dns records for them and last the provisoners. so we use depens_on and give the list
+
+
+
+
